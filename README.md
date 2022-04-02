@@ -21,3 +21,6 @@ This is a system for generating clients' invoice.
 - **Download invoice_collection.json file (it's exist in project root)**
 - **import invoice_collection.json into postman and run the endpoints**
 
+### Admin Account
+- **Email: admin@admin.com** 
+- **Password: password**
