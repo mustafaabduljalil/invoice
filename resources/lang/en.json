@@ -1,0 +1,7 @@
+{
+    "User logged in successfully" : "User logged in successfully",
+    "Email or Password is incorrect" : "Email or Password is incorrect",
+    "User logged out successfully" : "User logged out successfully",
+    "Client created successfully": "Client created successfully",
+    "Invoice created successfully" : "Invoice created successfully"
+}

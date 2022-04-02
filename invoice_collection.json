@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "d093b743-c96b-4ff5-953a-090cc8093126",
+		"name": "Invoice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log out",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/auth/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NWY3NmJmMy1jMGEzLTQyY2UtOWM5OC0zOGJmYWY0YWQxNjAiLCJqdGkiOiJkOTY2YjA3NTRmMDRhZDlmMzVlNDFjNDc3OTNlYTE4Y2M1NTQyZjFjN2EyODczNDlkNjQ2NzI0NjdmOTE4MmM4OTdlMDIxMDM0M2MxM2M4MyIsImlhdCI6MTY0ODg5OTAyOC42NzI0NzYsIm5iZiI6MTY0ODg5OTAyOC42NzI0ODksImV4cCI6MTY4MDQzNTAyOC42MjQ2ODQsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.arEBdhaOdoAda70TXEc7Oa8AuEvz_1AYm7LY3fWlpOO5MKrUFKzMRoBkY2E_ifOTTcJlToN_8XD6QRS8TFBTAw0FEO0j1M42ysDjfFNvxvHOcrngy8SxmMl78abYBtfM0YId6mWOZ2jQ0T4PZRNfk4hcHfH61xX_-ym99cbQ_JSlWots0IYS-tF9_hR_ItUd3ivx299TQ2kitwad5LBDjnBqPmlnF5ZbVieHIeMh84gIaYH4WAD4dR5ubFfU8cb_SEjIuic2uqtmMnHbPA-uGlRXCl-8ma717T2rcvr861UZiQtt8_JAICI6xvfE4YSDZ6W72tJM1DncfU_D8G8-QIHtq4VoZp0F7vUX1f-vOwVdApp7QAdC0Zq9lMd1-_sJj18HtSu0gcUq5rl7QLbqsUHFefSZ6SyKBkYXgHr6N9b6u6c45g-rB2AafGfZlpEBio1tHgnBwAxcNI-utF7A9R_ckgncBzSu3eUOCIrMzMzpTIbPmh9RW7xbag_7GELTx9W8Rq1A6indl8umRJnQFQgHtmotZvCQGrUJ40zTra5dX5TMlP4pcODIWoIGghaV1wd5CkzAy1P3fZaTBwf7WyjIruMeFg3_TmRW47Tg0UBpvA9BAFgPoQfs8QCYTjD28xNVnsCvxgELUm4f0eY7GRcLfkRJFGL5E4gHEKVmRsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "full_name",
+									"value": "mustafa abdujalil",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mustafaabdujalil@prexle.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "+20102664179",
+									"type": "text"
+								},
+								{
+									"key": "preferred_communication_channel",
+									"value": "email",
+									"description": "sms / email",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/client",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"client"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoices",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NWY3NmJmMy1jMGEzLTQyY2UtOWM5OC0zOGJmYWY0YWQxNjAiLCJqdGkiOiJkOTY2YjA3NTRmMDRhZDlmMzVlNDFjNDc3OTNlYTE4Y2M1NTQyZjFjN2EyODczNDlkNjQ2NzI0NjdmOTE4MmM4OTdlMDIxMDM0M2MxM2M4MyIsImlhdCI6MTY0ODg5OTAyOC42NzI0NzYsIm5iZiI6MTY0ODg5OTAyOC42NzI0ODksImV4cCI6MTY4MDQzNTAyOC42MjQ2ODQsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.arEBdhaOdoAda70TXEc7Oa8AuEvz_1AYm7LY3fWlpOO5MKrUFKzMRoBkY2E_ifOTTcJlToN_8XD6QRS8TFBTAw0FEO0j1M42ysDjfFNvxvHOcrngy8SxmMl78abYBtfM0YId6mWOZ2jQ0T4PZRNfk4hcHfH61xX_-ym99cbQ_JSlWots0IYS-tF9_hR_ItUd3ivx299TQ2kitwad5LBDjnBqPmlnF5ZbVieHIeMh84gIaYH4WAD4dR5ubFfU8cb_SEjIuic2uqtmMnHbPA-uGlRXCl-8ma717T2rcvr861UZiQtt8_JAICI6xvfE4YSDZ6W72tJM1DncfU_D8G8-QIHtq4VoZp0F7vUX1f-vOwVdApp7QAdC0Zq9lMd1-_sJj18HtSu0gcUq5rl7QLbqsUHFefSZ6SyKBkYXgHr6N9b6u6c45g-rB2AafGfZlpEBio1tHgnBwAxcNI-utF7A9R_ckgncBzSu3eUOCIrMzMzpTIbPmh9RW7xbag_7GELTx9W8Rq1A6indl8umRJnQFQgHtmotZvCQGrUJ40zTra5dX5TMlP4pcODIWoIGghaV1wd5CkzAy1P3fZaTBwf7WyjIruMeFg3_TmRW47Tg0UBpvA9BAFgPoQfs8QCYTjD28xNVnsCvxgELUm4f0eY7GRcLfkRJFGL5E4gHEKVmRsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "full_name",
+									"value": "mustafa abdujalil",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mustafaabdujalil@10degrees.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "+20102664178",
+									"type": "text"
+								},
+								{
+									"key": "preferred_communication_channel",
+									"value": "email",
+									"description": "sms / email",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "due_date",
+									"value": "2022-12-22",
+									"description": "date format Y-m-d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/v1/client-invoice",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"client-invoice"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

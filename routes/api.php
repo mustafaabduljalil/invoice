@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\API\ClientController;
+use App\Http\Controllers\API\ClientInvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'v1'], function(){
+
+    #### Authentication routes #####
+    Route::prefix('auth')->group( function () {
+        Route::post('login', [AuthController::class, 'login']);
+    });
+
+    ######### Routes for logged user #########
+    Route::middleware('auth:api')->group( function () {
+
+        #### Authentication routes #####
+        Route::prefix('auth')->group( function () {
+            Route::post('logout', [AuthController::class, 'logout']);
+        });
+
+        ######### Client routes #########
+        Route::apiResource('client', ClientController::class);
+        Route::apiResource('client-invoice', ClientInvoiceController::class);
+
+    });
+
 });
